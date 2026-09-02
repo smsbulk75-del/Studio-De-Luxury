@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio De Luxury · Hitesh Sharma</title>
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+      background: #faf7f2;
+      color: #1e1e1e;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header / nav */
+    header {
+      background: #1a1a1a;
+      color: #f0eae3;
+      padding: 18px 0;
+      border-bottom: 3px solid #c9a87c;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    .header-flex {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand h1 {
+      font-size: 2rem;
+      font-weight: 300;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #f0eae3;
+    }
+
+    .brand h1 span {
+      font-weight: 600;
+      color: #d4b48c;
+    }
+
+    .brand .tagline {
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      color: #b8aa9a;
+      margin-top: 2px;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      gap: 28px;
+    }
+
+    nav ul li a {
+      color: #e0d6ca;
+      text-decoration: none;
+      font-weight: 400;
+      letter-spacing: 1px;
+      font-size: 1rem;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      border-bottom-color: #c9a87c;
+      color: #ffffff;
+    }
+
+    /* hero section */
+    .hero {
+      background: linear-gradient(135deg, #2b2520 0%, #1e1916 100%);
+      color: #f2ebe3;
+      padding: 60px 0 50px;
+      margin-bottom: 40px;
+      border-radius: 0 0 40px 40px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+
+    .hero-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero-text h2 {
+      font-size: 2.8rem;
+      font-weight: 300;
+      letter-spacing: 3px;
+    }
+
+    .hero-text h2 strong {
+      font-weight: 600;
+      color: #d4b48c;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+      margin: 12px 0 20px;
+      max-width: 600px;
+    }
+
+    .hero-contact {
+      background: rgba(255, 255, 255, 0.06);
+      padding: 22px 30px;
+      border-radius: 40px;
+      border-left: 4px solid #c9a87c;
+      backdrop-filter: blur(2px);
+    }
+
+    .hero-contact .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 8px 0;
+      font-size: 1.1rem;
+    }
+
+    .hero-contact .contact-item i {
+      width: 28px;
+      color: #d4b48c;
+      font-size: 1.2rem;
+    }
+
+    .hero-contact .address {
+      margin-top: 12px;
+      font-style: normal;
+      border-top: 1px solid #3d352e;
+      padding-top: 12px;
+      font-size: 1rem;
+      letter-spacing: 0.3px;
+    }
+
+    /* cards / sections */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+      margin-bottom: 28px;
+      color: #1e1a16;
+      border-bottom: 2px solid #d4b48c;
+      padding-bottom: 10px;
+      display: inline-block;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      margin: 40px 0 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 24px 20px;
+      border-radius: 24px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+      transition: 0.25s ease;
+      border: 1px solid #f0e8df;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.06);
+      border-color: #d4b48c;
+    }
+
+    .card i {
+      font-size: 2.4rem;
+      color: #c9a87c;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-weight: 500;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      color: #1e1a16;
+    }
+
+    .card p {
+      color: #4e453e;
+      font-size: 0.98rem;
+    }
+
+    /* policy / terms cards */
+    .policy-block {
+      background: #ffffff;
+      padding: 32px 36px;
+      border-radius: 30px;
+      margin: 30px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      border: 1px solid #e9dfd5;
+    }
+
+    .policy-block h3 {
+      font-size: 1.6rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: #1e1916;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .policy-block h3 i {
+      color: #c9a87c;
+      font-size: 1.8rem;
+    }
+
+    .policy-block ul, .policy-block p {
+      color: #2f2924;
+      margin-left: 8px;
+    }
+
+    .policy-block ul li {
+      margin: 10px 0;
+      list-style: none;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .policy-block ul li::before {
+      content: "•";
+      color: #c9a87c;
+      font-weight: bold;
+      position: absolute;
+      left: 4px;
+      font-size: 1.4rem;
+    }
+
+    /* contact page specific */
+    .contact-details {
+      background: #ffffff;
+      padding: 28px 36px;
+      border-radius: 40px;
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      border: 1px solid #e9dfd5;
+    }
+
+    .contact-details div {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 12px 0;
+      font-size: 1.1rem;
+    }
+
+    .contact-details i {
+      color: #c9a87c;
+      font-size: 1.8rem;
+      width: 40px;
+      text-align: center;
+    }
+
+    .copyright {
+      background: #1a1a1a;
+      color: #b8aa9a;
+      text-align: center;
+      padding: 28px 20px;
+      margin-top: 60px;
+      border-top: 2px solid #c9a87c;
+      letter-spacing: 1px;
+      font-size: 0.95rem;
+    }
+
+    .copyright span {
+      color: #d4b48c;
+      font-weight: 500;
+    }
+
+    /* page toggle (display none) */
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      .header-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      nav ul {
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .hero-text h2 {
+        font-size: 2rem;
+      }
+      .hero-contact {
+        padding: 18px 20px;
+        width: 100%;
+        margin-top: 20px;
+      }
+      .contact-details {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand h1 {
+        font-size: 1.6rem;
+      }
+      .policy-block {
+        padding: 20px;
+      }
+    }
+
+    /* quick utility */
+    .mt-2 { margin-top: 20px; }
+    .mb-1 { margin-bottom: 10px; }
+    .text-muted { color: #6b5f56; }
+    .flex { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-flex">
+      <div class="brand">
+        <h1>STUDIO <span>DE LUXURY</span></h1>
+        <div class="tagline"><i class="fas fa-tshirt" style="margin-right: 8px;"></i> APPAREL & CLOTHING · HITESH SHARMA</div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#" class="active" data-page="home"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="#" data-page="privacy"><i class="fas fa-shield-alt"></i> Privacy</a></li>
+          <li><a href="#" data-page="terms"><i class="fas fa-file-contract"></i> Terms</a></li>
+          <li><a href="#" data-page="contact"><i class="fas fa-phone-alt"></i> Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- =========== HOME PAGE ============= -->
+    <section id="home" class="page active">
+      <div class="hero">
+        <div class="container hero-content">
+          <div class="hero-text">
+            <h2><strong>Hitesh Sharma</strong> · Studio De Luxury</h2>
+            <p>Premium apparel & clothing crafted for distinction. Timeless elegance, modern sensibility.</p>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px;">
+              <span style="background: #c9a87c; color: #1a1a1a; padding: 6px 20px; border-radius: 40px; font-weight: 500;">Luxury fabrics</span>
+              <span style="background: #2b2520; color: #e0d6ca; padding: 6px 20px; border-radius: 40px; border:1px solid #5a4c40;">Custom tailoring</span>
+            </div>
+          </div>
+          <div class="hero-contact">
+            <div class="contact-item"><i class="fas fa-phone-alt"></i> <span>9315914763</span></div>
+            <div class="contact-item"><i class="fas fa-map-pin"></i> <span>25/1 West Patel Nagar, New Delhi 110008</span></div>
+            <div class="address"><i class="fas fa-store"></i> Apparel & Clothing · By appointment</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- brand highlights -->
+      <div class="card-grid">
+        <div class="card">
+          <i class="fas fa-cut"></i>
+          <h3>Bespoke tailoring</h3>
+          <p>Every piece is crafted with precision, using the finest materials sourced from around the world.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-palette"></i>
+          <h3>Exclusive designs</h3>
+          <p>Signature collections that blend contemporary trends with classic Indian craftsmanship.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-hand-sparkles"></i>
+          <h3>Personal service</h3>
+          <p>Hitesh Sharma and his team offer a curated experience, from consultation to final fitting.</p>
+        </div>
+      </div>
+
+      <div style="margin: 30px 0 10px; padding: 18px 0; border-top: 1px solid #e0d6ca;">
+        <p style="font-size: 1.1rem; color: #3d352e;"><i class="fas fa-location-dot" style="color: #c9a87c; margin-right: 12px;"></i> <strong>Studio address:</strong> 25/1 West Patel Nagar, New Delhi 110008 · <strong>Call:</strong> 9315914763</p>
+      </div>
+    </section>
+
+    <!-- =========== PRIVACY PAGE ============= -->
+    <section id="privacy" class="page">
+      <h2 class="section-title"><i class="fas fa-shield-alt" style="margin-right: 12px; color:#c9a87c;"></i>Privacy Policy</h2>
+      <div class="policy-block">
+        <h3><i class="fas fa-user-lock"></i> Your privacy matters</h3>
+        <p>At Studio De Luxury (Hitesh Sharma), we are committed to protecting your personal information. This policy outlines how we collect, use, and safeguard your data.</p>
+        <ul>
+          <li><strong>Information collection:</strong> We collect name, contact details, and preferences only when you voluntarily provide them (e.g., inquiries, orders).</li>
+          <li><strong>Use of data:</strong> Your information is used to fulfill orders, personalize your experience, and send updates about our collections (only with your consent).</li>
+          <li><strong>Data protection:</strong> We implement industry-standard security measures to prevent unauthorized access or disclosure.</li>
+          <li><strong>Third-party sharing:</strong> We never sell or share your data with third parties, except as required for shipping or legal compliance.</li>
+          <li><strong>Cookies:</strong> Our website uses minimal cookies to enhance browsing; you can control cookie preferences in your browser.</li>
+          <li><strong>Your rights:</strong> You may request access, correction, or deletion of your data by contacting us directly.</li>
+        </ul>
+        <p style="margin-top: 16px; font-style: italic; color: #5a4c40;">Last updated: January 2026 · Studio De Luxury</p>
+      </div>
+    </section>
+
+    <!-- =========== TERMS PAGE ============= -->
+    <section id="terms" class="page">
+      <h2 class="section-title"><i class="fas fa-file-contract" style="margin-right: 12px; color:#c9a87c;"></i>Terms & Conditions</h2>
+      <div class="policy-block">
+        <h3><i class="fas fa-gavel"></i> General terms</h3>
+        <p>By using the Studio De Luxury website and services, you agree to the following terms. Please read them carefully.</p>
+        <ul>
+          <li><strong>Orders & customizations:</strong> All orders are subject to acceptance and availability. Custom pieces require a deposit and may have longer lead times.</li>
+          <li><strong>Pricing:</strong> Prices are listed in INR and are subject to change without notice. Taxes and shipping charges are additional.</li>
+          <li><strong>Returns & exchanges:</strong> We accept returns within 7 days of delivery for ready-to-wear items (unworn, with tags). Custom-made pieces are non-returnable unless defective.</li>
+          <li><strong>Intellectual property:</strong> All designs, images, and content on this site are the property of Studio De Luxury and may not be reproduced without permission.</li>
+          <li><strong>Limitation of liability:</strong> We are not liable for indirect or consequential damages arising from the use of our products or website.</li>
+          <li><strong>Governing law:</strong> These terms are governed by the laws of India, and any disputes shall be subject to the jurisdiction of New Delhi courts.</li>
+        </ul>
+        <p style="margin-top: 16px; font-weight: 300;">For any questions, please contact us via the <a href="#" data-page="contact" style="color:#c9a87c; text-decoration: underline;">Contact page</a>.</p>
+      </div>
+    </section>
+
+    <!-- =========== CONTACT PAGE ============= -->
+    <section id="contact" class="page">
+      <h2 class="section-title"><i class="fas fa-address-card" style="margin-right: 12px; color:#c9a87c;"></i>Contact</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 30px; margin: 20px 0 10px;">
+        <div style="flex: 1.5; min-width: 280px;">
+          <div class="contact-details" style="margin:0; border-radius: 30px;">
+            <div><i class="fas fa-user-tie"></i> <span><strong>Hitesh Sharma</strong> · Studio De Luxury</span></div>
+            <div><i class="fas fa-phone"></i> <span>9315914763</span></div>
+            <div><i class="fas fa-map-location-dot"></i> <span>25/1 West Patel Nagar, New Delhi 110008</span></div>
+            <div><i class="fas fa-envelope"></i> <span>studio@deluxury.in (example)</span></div>
+            <div><i class="fas fa-clock"></i> <span>Mon–Sat: 11:00 AM – 7:00 PM (by appointment)</span></div>
+          </div>
+          <div style="background: #ece4db; padding: 16px 22px; border-radius: 40px; margin-top: 16px;">
+            <i class="fas fa-tshirt" style="color:#c9a87c; margin-right: 10px;"></i> Apparel & Clothing · Bespoke · Luxury pret
+          </div>
+        </div>
+        <div style="flex: 1; min-width: 220px; background: #ffffff; padding: 24px 28px; border-radius: 40px; border:1px solid #e9dfd5;">
+          <h4 style="font-weight: 400; letter-spacing: 1px; margin-bottom: 12px;"><i class="fas fa-pen-fancy" style="color:#c9a87c;"></i> Get in touch</h4>
+          <p style="color: #3d352e;">We'd love to hear from you. For inquiries, appointments, or custom orders, call or visit the studio.</p>
+          <div style="margin-top: 18px; background: #1a1a1a; color: #f0eae3; padding: 12px 16px; border-radius: 60px; text-align: center; letter-spacing: 1px;">
+            <i class="fas fa-phone-alt" style="margin-right: 12px;"></i> 9315914763
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- copyright footer -->
+  <footer class="copyright">
+    <div class="container">
+      <p><i class="far fa-copyright"></i> <span id="year"></span> Studio De Luxury · Hitesh Sharma. All rights reserved.</p>
+      <p style="font-size: 0.8rem; margin-top: 6px; opacity: 0.7;">Apparel & Clothing · 25/1 West Patel Nagar, New Delhi 110008</p>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      // set current year in copyright
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // page navigation
+      const navLinks = document.querySelectorAll('nav ul li a');
+      const pages = document.querySelectorAll('.page');
+
+      function showPage(pageId) {
+        pages.forEach(p => p.classList.remove('active'));
+        const target = document.getElementById(pageId);
+        if (target) target.classList.add('active');
+
+        // update active link
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.dataset.page === pageId) {
+            link.classList.add('active');
+          }
+        });
+
+        // scroll to top smoothly
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const pageId = this.dataset.page;
+          if (pageId) showPage(pageId);
+        });
+      });
+
+      // also handle in-page links that might point to contact (e.g., from terms)
+      document.querySelectorAll('a[data-page]').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const pageId = this.dataset.page;
+          if (pageId) showPage(pageId);
+        });
+      });
+
+      // initial: if hash in url, show that page
+      const hash = window.location.hash.replace('#', '');
+      if (hash) {
+        const validPages = ['home','privacy','terms','contact'];
+        if (validPages.includes(hash)) {
+          showPage(hash);
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
